@@ -15,4 +15,4 @@ resolvers += Resolver.url(
 
 // Use the Play sbt plugin for Play projects
 //addSbtPlugin("play" % "sbt-plugin" % "2.1.0")
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.3.0")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.4.0")

@@ -2,10 +2,8 @@ import sbt._
 import Keys._
 
 object ApplicationBuild extends Build {
-
     val appName         = "c3po"
-    val appVersion      = "0.4.0"
-
+    val appVersion      = "0.5.0"
     val appDependencies = Seq(
       "dom4j" % "dom4j" % "1.6.1",
       "org.apache.commons" % "commons-digester3" % "3.2",
@@ -15,8 +13,9 @@ object ApplicationBuild extends Build {
     )
 
     val main = Project(appName, file(".")).enablePlugins(play.PlayJava).settings(
-      version := appVersion,
-      libraryDependencies ++= appDependencies
+      version := Pom.version(baseDirectory.value),
+      libraryDependencies ++=appDependencies,
+      libraryDependencies ++= Pom.dependencies(baseDirectory.value).filterNot(d => d.name == core.id))
     ).settings(
       scalaVersion := "2.11.1"
     )
