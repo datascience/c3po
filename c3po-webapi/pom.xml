@@ -12,9 +12,9 @@
     <packaging>jar</packaging>
     <name>C3PO Web API</name>
     <properties>
-        <play2.version>2.4.0</play2.version>
-        <play2.scala.version>2.11</play2.scala.version>
-        <play2.plugin.version>1.0.0-alpha5</play2.plugin.version>
+        <play2.version>2.3.0</play2.version>
+        <play2.scala.version>2.11.1</play2.scala.version>
+        <play2.plugin.version>1.0.0-rc1</play2.plugin.version>
     </properties>
     <repositories>
         <repository>
@@ -35,17 +35,6 @@
         </pluginRepository>
     </pluginRepositories>
     <dependencies>
-        <dependency>
-            <groupId>com.typesafe.play</groupId>
-            <artifactId>play_${play2.scala.version}</artifactId>
-            <version>${play2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.play</groupId>
-            <artifactId>play-test_${play2.scala.version}</artifactId>
-            <version>${play2.version}</version>
-            <scope>test</scope>
-        </dependency>
         <!-- required for IntegrationSpec -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -78,46 +67,54 @@
             <artifactId>guava</artifactId>
             <version>14.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit-core-js</artifactId>
+            <version>2.15</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${play2.scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play_2.11</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>templates-compiler_2.10</artifactId>
+            <version>2.2.0</version>
+        </dependency>
     </dependencies>
     <build>
-        <sourceDirectory>${basedir}/app</sourceDirectory>
-        <testSourceDirectory>${basedir}/test</testSourceDirectory>
+        <sourceDirectory>${project.basedir}/app</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>${basedir}/conf</directory>
+                <directory>${project.basedir}/conf</directory>
             </resource>
             <resource>
-                <directory>${basedir}</directory>
-                <includes>
-                    <include>public/**</include>
-                </includes>
+                <directory>${project.basedir}/public</directory>
+                <targetPath>public</targetPath>
             </resource>
         </resources>
         <plugins>
             <plugin>
                 <groupId>com.google.code.play2-maven-plugin</groupId>
                 <artifactId>play2-maven-plugin</artifactId>
-                <version>${play2.plugin.version}</version>
+                <version>1.0.0-rc1</version>
                 <extensions>true</extensions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.code.play2-maven-plugin</groupId>
-                        <artifactId>play2-provider-play22</artifactId>
-                        <version>${play2.plugin.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
+
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Spec.java</include>
-                        <include>**/*Test.java</include>
-                    </includes>
-                </configuration>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>1.0.0</version>
             </plugin>
+
         </plugins>
     </build>
 </project>

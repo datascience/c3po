@@ -5,6 +5,9 @@ object ApplicationBuild extends Build {
     val appName         = "c3po"
     val appVersion      = "0.5.0"
     val appDependencies = Seq(
+      javaCore,
+      javaJdbc,
+      javaEbean,
       "dom4j" % "dom4j" % "1.6.1",
       "org.apache.commons" % "commons-digester3" % "3.2",
       "org.apache.commons" % "commons-math" % "2.2",
@@ -17,6 +20,6 @@ object ApplicationBuild extends Build {
       libraryDependencies ++=appDependencies,
       libraryDependencies ++= Pom.dependencies(baseDirectory.value).filterNot(d => d.name == core.id))
     ).settings(
-      scalaVersion := "2.11.1"
+      scalaVersion := "2.11"
     )
 }

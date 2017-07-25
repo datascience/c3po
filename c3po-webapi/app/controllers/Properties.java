@@ -2,18 +2,18 @@ package controllers;
 
 
 import com.petpet.c3po.api.dao.PersistenceLayer;
-import com.petpet.c3po.api.model.Element;
 import com.petpet.c3po.api.model.Property;
-import com.petpet.c3po.api.model.helper.*;
+import com.petpet.c3po.api.model.helper.Filter;
+import com.petpet.c3po.api.model.helper.FilterCondition;
+import com.petpet.c3po.api.model.helper.PropertyType;
 import com.petpet.c3po.utils.Configurator;
 import helpers.Distribution;
 import helpers.Graph;
 import helpers.PropertyValuesFilter;
 import play.Logger;
-import play.data.DynamicForm;
+import play.data;
 import play.mvc.Controller;
 import play.mvc.Result;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
