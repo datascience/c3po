@@ -25,7 +25,7 @@ import com.petpet.c3po.api.model.Property;
 public class HtmlInfoProcessingRuleTest {
 
   @Test
-  public void shouldTestFaultyTagOccurrences() throws Exception {
+  public void shouldTestFaultyTagOccurrences() {
     Property p1 = Mockito.mock(Property.class);
     Property p2 = Mockito.mock(Property.class);
 

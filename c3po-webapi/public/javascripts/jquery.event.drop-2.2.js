@@ -282,7 +282,7 @@ drop = $.event.special.drop = {
 					data.anyactive -= 1;
 				}
 			} while ( ++i < len ); // loop 		
-		} while ( ++x < end ) // loop
+		} while ( ++x < end ); // loop
 		// check if the mouse is still moving or is idle
 		if ( drop.last && xy[0] == drop.last.pageX && xy[1] == drop.last.pageY ) 
 			delete drop.timer; // idle, don't recurse

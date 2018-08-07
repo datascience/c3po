@@ -41,11 +41,11 @@ public class MongoPersistenceLayerTest {
     final Logger LOG = LoggerFactory.getLogger(MongoPersistenceLayerTest.class);
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         helpers.DataOps.removeData();
     }
 
@@ -62,7 +62,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestFindOne() throws Exception {
+    public void shouldTestFindOne() {
         //if (this.pLayer.isConnected()) {
 
            // this.insertTestData();
@@ -79,7 +79,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestRemoveAll() throws Exception {
+    public void shouldTestRemoveAll() {
         if (this.pLayer.isConnected()) {
             //  this.insertTestData();
 
@@ -91,7 +91,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestRemoveOne() throws Exception {
+    public void shouldTestRemoveOne() {
         if (this.pLayer.isConnected()) {
             //   this.insertTestData();
 
@@ -112,7 +112,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestInsert() throws Exception {
+    public void shouldTestInsert() {
 
             Iterator<Element> iter = pLayer.find(Element.class, null);
             iter = pLayer.find(Element.class, null);
@@ -120,7 +120,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestUpdate() throws Exception {
+    public void shouldTestUpdate() {
             Filter element1 = new Filter(new FilterCondition("uid", "/home/petrov/taverna/tmp/303/303034.csv"));
             Iterator<Element> iter = this.pLayer.find(Element.class, element1);
             Assert.assertTrue(iter.hasNext());
@@ -141,7 +141,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestUpdateAll() throws Exception {
+    public void shouldTestUpdateAll() {
 
 
             Filter filter = new Filter(new FilterCondition("collection", "test"));
@@ -166,7 +166,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestNumericAggregation() throws Exception {
+    public void shouldTestNumericAggregation() {
         if (this.pLayer.isConnected()) {
             // this.insertTestData();
             Property property = this.pLayer.getCache().getProperty("pagecount");
@@ -184,7 +184,7 @@ public class MongoPersistenceLayerTest {
 
 
 
-    public void shouldTestAggregation() throws Exception {
+    public void shouldTestAggregation() {
 
         MongoPersistenceLayer pLayer = (MongoPersistenceLayer) this.pLayer;
         List<BasicDBObject> aggregationResult = pLayer.aggregate("created", null, false);
@@ -194,7 +194,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldDebugAggregation() throws Exception {
+    public void shouldDebugAggregation() {
 
 
         MongoPersistenceLayer pLayer = (MongoPersistenceLayer) this.pLayer;
@@ -232,7 +232,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void shouldTestCountConflicts() throws Exception{
+    public void shouldTestCountConflicts() {
         MongoPersistenceLayer pLayer = (MongoPersistenceLayer) this.pLayer;
         List<String> props=new ArrayList<String>();
         props.add("format");
@@ -244,7 +244,7 @@ public class MongoPersistenceLayerTest {
     }
 
 
-    public void SuperMapReduceTest() throws Exception {
+    public void SuperMapReduceTest() {
 
         Map<String, List<Integer>> binThresholds = new HashMap<String, List<Integer>>();
         List<Integer> bins = new ArrayList<Integer>();

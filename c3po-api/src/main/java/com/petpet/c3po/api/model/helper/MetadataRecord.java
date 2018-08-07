@@ -34,7 +34,7 @@ public class MetadataRecord implements Serializable {
      *
      * @author Petar Petrov <me@petarpetrov.org>
      */
-    public static enum Status {
+    public enum Status {
         /**
          * Means that more than one tools confirm the value.
          */

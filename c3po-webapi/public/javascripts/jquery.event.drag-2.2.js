@@ -290,7 +290,7 @@ drag = $special.drag = {
 			if ( type == "dragstart" && !ia.cancelled )
 				callback.update(); 
 		}
-		while ( ++i < len )
+		while ( ++i < len );
 		// restore the original event & type
 		event.type = orig.type;
 		event.originalEvent = orig.event;

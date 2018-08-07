@@ -232,11 +232,8 @@ public class Filter implements Serializable {
             return false;
         Filter other = (Filter) obj;
         if (conditions == null) {
-            if (other.conditions != null)
-                return false;
-        } else if (!conditions.equals(other.conditions))
-            return false;
-        return true;
+            return other.conditions == null;
+        } else return conditions.equals(other.conditions);
     }
 
     public String toString() {
@@ -246,7 +243,7 @@ public class Filter implements Serializable {
             result.append("{");
             result.append("property: " + propertyFilterCondition.getProperty()+ ", ");
             if (!propertyFilterCondition.getStatuses().isEmpty()){
-                result.append("status: " + propertyFilterCondition.getStatuses().get(0).toString()+ ", ");
+                result.append("status: " + propertyFilterCondition.getStatuses().get(0) + ", ");
             }
             if (!propertyFilterCondition.getSourcedValues().isEmpty()) {
                 for (Map.Entry<String, String> stringStringEntry : propertyFilterCondition.getSourcedValues().entrySet()) {

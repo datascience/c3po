@@ -71,7 +71,7 @@ public class Overview extends Controller {
         ArrayList<String> properties = Lists.newArrayList(Application.PROPS);
         properties.add("size");
         Map<String, Distribution> distributions = Properties.getDistributions(properties, filter);
-        Long conflictsCount= crp.getConflictsCount(filter);
+        Long conflictsCount= ConflictResolutionProcessor.getConflictsCount(filter);
         Iterator<Map.Entry<String, Distribution>> iterator = distributions.entrySet().iterator();
 
 

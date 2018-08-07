@@ -60,8 +60,7 @@ public class Template {
 			ArrayList<TemplateProperty> tmp2=new ArrayList<TemplateProperty>(that.properties);
 			tmp.removeAll(that.properties);
 			tmp2.removeAll(properties);
-			if (tmp.isEmpty() && tmp2.isEmpty())
-				return true;
+            return tmp.isEmpty() && tmp2.isEmpty();
 		}
 			
 		return false;

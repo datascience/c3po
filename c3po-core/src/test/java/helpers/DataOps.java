@@ -89,7 +89,7 @@ public class DataOps {
             pLayer.remove(Source.class, null);
             try {
                 pLayer.close();
-            } catch (C3POPersistenceException e) {
+            } catch (Exception e) {
                 LOG.warn("Could not close the connection in a clear fashion");
             }
         }

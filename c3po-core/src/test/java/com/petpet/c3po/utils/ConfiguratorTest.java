@@ -44,7 +44,7 @@ public class ConfiguratorTest {
   }
 
 
-  public void shouldLoadConfiguration() throws Exception {
+  public void shouldLoadConfiguration() {
     LOG.info("Starting test 'shouldLoadConfiguration'");
 
     this.helper.copyTestConfigFile();

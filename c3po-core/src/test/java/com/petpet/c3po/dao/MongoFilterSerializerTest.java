@@ -45,19 +45,19 @@ public class MongoFilterSerializerTest {
   PersistenceLayer pLayer;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     System.out.println("Setting up the test. Inserting the data");
 
     ser=new MongoFilterSerializer();
   }
 
   @After
-  public void tearDown() throws Exception {
+  public void tearDown() {
     System.out.println("Tearing down the test. Removing the data");
   }
 
   @Test
-  public void shouldTestMongoSimpleFilterSerialization() throws Exception {
+  public void shouldTestMongoSimpleFilterSerialization() {
     Filter f = Mockito.mock(Filter.class);
     FilterCondition fc = Mockito.mock(FilterCondition.class);
 
@@ -76,7 +76,7 @@ public class MongoFilterSerializerTest {
   }
 
   @Test
-  public void shouldTestMongoOrFilterSerialization() throws Exception {
+  public void shouldTestMongoOrFilterSerialization() {
     Filter f = Mockito.mock(Filter.class);
     FilterCondition fc1 = Mockito.mock(FilterCondition.class);
     FilterCondition fc2 = Mockito.mock(FilterCondition.class);
@@ -106,7 +106,7 @@ public class MongoFilterSerializerTest {
   }
 
   @Test
-  public void shouldTestMongoAndOrFilterSerialization() throws Exception {
+  public void shouldTestMongoAndOrFilterSerialization() {
     Filter f = Mockito.mock(Filter.class);
     FilterCondition fc1 = Mockito.mock(FilterCondition.class);
     FilterCondition fc2 = Mockito.mock(FilterCondition.class);
@@ -143,7 +143,7 @@ public class MongoFilterSerializerTest {
 
 
   @Test
-  public void ShouldTestSerialiseNew() throws Exception {
+  public void ShouldTestSerialiseNew() {
     Filter f=new Filter();
     List<PropertyFilterCondition> pfcs=new ArrayList<PropertyFilterCondition>();
 

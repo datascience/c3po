@@ -22,8 +22,9 @@ public class SessionFilters {
 		}
 		
 		return result;
-	};
-	public static void addFilter(String session,Filter filter){
+	}
+
+    public static void addFilter(String session,Filter filter){
 		map.put(session, filter);
 	}
 	public static void clean(){

@@ -47,8 +47,6 @@ public class TemplateProperty {
 		if (obj.getClass()!=getClass())
 			return false;
 		TemplateProperty that=(TemplateProperty) obj;
-		if (name.equals(that.name) && (render_type.equals(that.render_type)))
-			return true;
-		return false;
-	}
+        return name.equals(that.name) && (render_type.equals(that.render_type));
+    }
 }

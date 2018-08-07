@@ -46,20 +46,20 @@ public class ConflictResolutionProcessorTest {
     final Logger LOG = LoggerFactory.getLogger(MongoPersistenceLayerTest.class);
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         System.out.println("Setting up the test. Inserting the data");
 
     }
 
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         System.out.println("Tearing down the test. Removing the data");
         helpers.DataOps.removeData();
     }
 
 
-    public void resolve() throws Exception {
+    public void resolve() {
         ConflictResolutionProcessor crp=new ConflictResolutionProcessor();
         Rule rule=new Rule();
         Element element=new Element(null,null);

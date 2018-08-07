@@ -158,7 +158,7 @@ public class SelectiveFeatureDistributionSamplingTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         if (this.pLayer.isConnected()) {
             this.pLayer.clearCache();
             this.pLayer.remove(Element.class, null);
@@ -166,14 +166,14 @@ public class SelectiveFeatureDistributionSamplingTest {
             this.pLayer.remove(Source.class, null);
             try {
                 this.pLayer.close();
-            } catch (C3POPersistenceException e) {
+            } catch (Exception e) {
                 LOG.warn("Could not close the connection in a clear fashion");
             }
         }
 
     }
 
-    public void execute() throws Exception {
+    public void execute() {
 
         SelectiveFeatureDistributionSampling sfd=new SelectiveFeatureDistributionSampling();
 

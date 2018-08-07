@@ -78,7 +78,7 @@ public class MongoElementSerializerTest {
     static Map<String, Class<? extends ProcessingRule>> knownRules;
 
 
-    public void serialize() throws Exception {
+    public void serialize() {
         String data="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<fits xmlns=\"http://hul.harvard.edu/ois/xml/ns/fits/fits_output\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd\" version=\"0.6.0\" timestamp=\"12/27/11 8:05 PM\">\n" +
                 "  <identification>\n" +

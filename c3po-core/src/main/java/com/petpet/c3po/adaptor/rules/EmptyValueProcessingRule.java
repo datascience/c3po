@@ -36,10 +36,7 @@ public class EmptyValueProcessingRule implements PreProcessingRule {
    */
   @Override
   public boolean shouldSkip( String property, String value, String status, String tool, String version ) {
-    if ( value == null || value.equals( "" ) ) {
-      return true;
-    }
-    return false;
+      return value == null || value.equals("");
   }
 
   /**

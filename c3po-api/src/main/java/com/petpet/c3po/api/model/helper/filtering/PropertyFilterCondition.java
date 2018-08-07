@@ -114,7 +114,7 @@ public class PropertyFilterCondition {
         return result;
     }
 
-    public static enum PropertyFilterConditionType {
+    public enum PropertyFilterConditionType {
         STATUS,
         PROPERTY,
         VALUE,
@@ -160,18 +160,15 @@ public class PropertyFilterCondition {
                 property = new String();
                 break;
             case SOURCE:
-                if (sources.contains(value.toString()))
-                    sources.remove(value.toString());
+                sources.remove(value.toString());
                 break;
             case VALUE:
-                if (values.contains(value.toString()))
-                    values.remove(value.toString());
+                values.remove(value.toString());
                 break;
             case SOURCEDVALUE:
                 Set<Map.Entry<String, String>> entries = ((Map<String, String>) value).entrySet();
                 for (Map.Entry<String, String> entry : entries) {
-                    if (sourcedValues.containsKey(entry.getKey()))
-                        sourcedValues.remove(entry.getKey());
+                    sourcedValues.remove(entry.getKey());
                 }
                 break;
         }

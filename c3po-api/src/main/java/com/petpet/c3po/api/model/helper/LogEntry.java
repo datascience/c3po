@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 public class LogEntry implements Serializable {
 
-  public static enum ChangeType {
+  public enum ChangeType {
     IGNORED,
     UPDATED,
     ADDED,

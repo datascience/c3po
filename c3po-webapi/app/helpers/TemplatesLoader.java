@@ -53,7 +53,7 @@ public class TemplatesLoader {
     }
 
     public void setTemplates(List<Template> templates) {
-        this.templates = templates;
+        TemplatesLoader.templates = templates;
     }
 
     @SuppressWarnings("rawtypes")

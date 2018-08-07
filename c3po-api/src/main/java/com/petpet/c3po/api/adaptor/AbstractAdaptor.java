@@ -228,7 +228,7 @@ public abstract class AbstractAdaptor implements Runnable {
         }
     }
 
-    private void process(MetadataStream stream) throws InterruptedException {
+    private void process(MetadataStream stream) {
         String name = null;
         String data = null;
         if ( stream != null ) {
@@ -355,7 +355,7 @@ public abstract class AbstractAdaptor implements Runnable {
     protected String getStringConfig( String key, String defaultValue ) {
         String result = null;
         if ( this.config != null ) {
-            result = (String) this.config.get( key );
+            result = this.config.get( key );
         }
 
         if ( result == null ) {

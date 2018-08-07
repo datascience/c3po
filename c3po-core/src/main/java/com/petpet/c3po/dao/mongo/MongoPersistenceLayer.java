@@ -257,7 +257,7 @@ public class MongoPersistenceLayer implements PersistenceLayer {
      * happens.
      */
     @Override
-    public void close() throws C3POPersistenceException {
+    public void close() {
         if (this.isConnected() && this.mongo != null) {
             //this.db.cleanCursors( true );
             this.mongo.close();

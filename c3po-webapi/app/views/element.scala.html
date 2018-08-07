@@ -115,7 +115,7 @@
                             console.log("added new property:" + myData);
                         }
                         return true;
-                    }
+                    };
                     self.SelectedData = ko.observableArray();
                     self.ColumNames = ko.observableArray();
                     result_array=self.SelectedData;
@@ -165,14 +165,14 @@
                     $( "table" ).resizable();
                     $( "th" ).resizable({handles: "se"});
                     $( "td" ).resizable({handles: "se"});
-                }
+                };
 
                 function createRule() {
                     var inputs = document.getElementsByClassName("my-checked-property-value");
                     var valuesToDelete=[];
                     for (var i in inputs){
                         if (inputs[i].checked) {
-                            var tmp=new Object();
+                            var tmp={};
                             tmp.source = inputs[i].getAttribute('data_source');
                             tmp.property = inputs[i].getAttribute('data_property');
                             tmp.value = inputs[i].getAttribute('value');

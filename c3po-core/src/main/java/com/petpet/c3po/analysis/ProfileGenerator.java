@@ -335,7 +335,7 @@ public class ProfileGenerator {
                  //           .getSources().get( i ) ) ) );
                    // Source source = sources.next();
                     sample.addElement( "record" ).addAttribute( "name", mr.getProperty() ).addAttribute( "value",
-                            mr.getValues().get( i ).toString() ).addAttribute( "tool", mr.getSources().get(0) );
+                            mr.getValues().get( i )).addAttribute( "tool", mr.getSources().get(0) );
                 }
 
             } else {

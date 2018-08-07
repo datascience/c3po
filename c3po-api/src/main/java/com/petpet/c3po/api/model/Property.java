@@ -127,11 +127,8 @@ public class Property implements Model, Serializable {
         } else if (!key.equals(other.key))
             return false;
         if (type == null) {
-            if (other.type != null)
-                return false;
-        } else if (!type.equals(other.type))
-            return false;
-        return true;
+            return other.type == null;
+        } else return type.equals(other.type);
     }
 
 }

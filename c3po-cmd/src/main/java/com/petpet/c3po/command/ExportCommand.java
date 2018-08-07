@@ -66,7 +66,7 @@ public class ExportCommand extends AbstractCLICommand implements Command {
 
     try {
       ctrl.export( options );
-    } catch ( C3POConfigurationException e ) {
+    } catch (Exception e ) {
       LOG.error( e.getMessage() );
       return;
 

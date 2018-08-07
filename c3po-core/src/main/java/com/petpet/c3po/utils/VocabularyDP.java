@@ -33,7 +33,7 @@ public class VocabularyDP {
      */
     public static String getUriByName(String name) {
         final String prop = (String) TERMS.get( name );
-        return (prop == null) ? null : prop;
+        return prop;
     }
 
 }

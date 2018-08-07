@@ -43,9 +43,7 @@ public class TemplateCondition {
 		if (obj.getClass()!=getClass())
 			return false;
 		TemplateCondition that=(TemplateCondition) obj;
-		if (key.equals(that.key) && (value.equals(that.value)))
-			return true;
-		return false;
-	}
+        return key.equals(that.key) && (value.equals(that.value));
+    }
 
 }

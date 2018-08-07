@@ -33,7 +33,7 @@ import static org.junit.Assert.*;
  * Created by artur on 22/07/16.
  */
 public class FITSAdaptorTest {
-    public void parseElement() throws Exception {
+    public void parseElement() {
 
         String name="012891.doc";
         String data="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
@@ -109,7 +109,7 @@ public class FITSAdaptorTest {
     Map<String, Class<? extends AbstractAdaptor>> knownAdaptors;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         pLayer = new MongoPersistenceLayer();
 
         Map<String, String> config = new HashMap<String, String>();
@@ -198,7 +198,7 @@ public class FITSAdaptorTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         if (this.pLayer.isConnected()) {
             this.pLayer.clearCache();
             this.pLayer.remove(Element.class, null);
@@ -206,7 +206,7 @@ public class FITSAdaptorTest {
             this.pLayer.remove(Source.class, null);
             try {
                 this.pLayer.close();
-            } catch (C3POPersistenceException e) {
+            } catch (Exception e) {
                 LOG.warn("Could not close the connection in a clear fashion");
             }
         }

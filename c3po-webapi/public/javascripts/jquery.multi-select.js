@@ -242,7 +242,7 @@
           e.preventDefault();
           e.stopPropagation();
           that.selectHighlighted($list);
-          return;
+
         }
       });
     },

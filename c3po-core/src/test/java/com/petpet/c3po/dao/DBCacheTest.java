@@ -66,7 +66,7 @@ public class DBCacheTest {
   }
 
   @Test
-  public void shouldTestCacheMissAndDBMiss() throws Exception {
+  public void shouldTestCacheMissAndDBMiss() {
     when(cursor.hasNext()).thenReturn(false);
 
     this.cache.clear();
@@ -82,7 +82,7 @@ public class DBCacheTest {
   }
 
   @Test
-  public void shouldTestCacheMissAndDBHit() throws Exception {
+  public void shouldTestCacheMissAndDBHit() {
     when(cursor.hasNext()).thenReturn(true, false);
     when(cursor.next()).thenReturn(Mockito.mock(Property.class));
 
@@ -96,7 +96,7 @@ public class DBCacheTest {
   }
 
   @Test
-  public void shouldTestCacheHit() throws Exception {
+  public void shouldTestCacheHit() {
     // when(cursor.hasNext()).thenReturn(false);
 
     this.cache.clear();
@@ -124,7 +124,7 @@ public class DBCacheTest {
   }
 
   @Test
-  public void shouldTestCacheClear() throws Exception {
+  public void shouldTestCacheClear() {
     this.cache.clear();
 
     String key = "test";

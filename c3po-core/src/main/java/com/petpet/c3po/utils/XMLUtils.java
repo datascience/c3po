@@ -81,20 +81,20 @@ public final class XMLUtils {
     }
 
     @Override
-    public void error( SAXParseException e ) throws SAXException {
+    public void error( SAXParseException e ) {
       LOG.error( "Error: {}", e.getMessage() );
       this.valid = false;
     }
 
     @Override
-    public void fatalError( SAXParseException e ) throws SAXException {
+    public void fatalError( SAXParseException e ) {
       LOG.error( "Fatal Error: {}", e.getMessage() );
       this.valid = false;
 
     }
 
     @Override
-    public void warning( SAXParseException e ) throws SAXException {
+    public void warning( SAXParseException e ) {
       LOG.error( "Warning: {}", e.getMessage() );
 
     }

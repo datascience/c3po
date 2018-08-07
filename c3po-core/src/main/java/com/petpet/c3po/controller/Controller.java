@@ -290,10 +290,8 @@ public class Controller {
      *
      * @param options
      *          the options to use
-     * @throws C3POConfigurationException
-     *           if the options are missing or wrong.
      */
-    public void export( Map<String, Object> options ) throws C3POConfigurationException {
+    public void export( Map<String, Object> options ) {
         String name = (String) options.get( Constants.OPT_COLLECTION_NAME );
         String location = (String) options.get( Constants.OPT_OUTPUT_LOCATION );
 

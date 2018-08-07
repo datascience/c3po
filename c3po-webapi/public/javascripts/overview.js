@@ -57,8 +57,7 @@ function showPopup(properties) {
 			}
 		});
 	});
-};
-
+}
 function showOptions(type) {
 	if (type == "STRING" || type == "BOOL" || type == "DATE") {
 		var property = $('.popupconfig select').val();
@@ -118,8 +117,7 @@ function applyIntegerHistogramSelection() {
 			//scroll to bottom of page.
 		}
 	});
-};
-
+}
 function getBarChart(ttl) {
 	var options = {
 		title : ttl,
@@ -198,8 +196,7 @@ function getBarChart(ttl) {
 	};
 
 	return options;
-};
-
+}
 function getPieChart(ttl) {
 	var options = {
 		title : ttl,
@@ -216,15 +213,13 @@ function getPieChart(ttl) {
 	};
 
 	return options;
-};
-
+}
 function prettifyTitle(title) {
 	title = title.replace(/_/g, " ");
 	return title.replace(/\w\S*/g, function(txt) {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
-};
-
+}
 function drawGraphs(data, options) {
 	var idx = 0;
 	var graphsdiv = $('#graphs');
@@ -277,4 +272,4 @@ function drawGraphs(data, options) {
 		}
 		idx++;
 	})
-};
+}

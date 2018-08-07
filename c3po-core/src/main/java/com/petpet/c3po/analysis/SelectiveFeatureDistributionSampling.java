@@ -152,7 +152,7 @@ public class SelectiveFeatureDistributionSampling extends RepresentativeGenerato
     }
 
 
-    public static void addToZipFile(String fileName, ZipOutputStream zos) throws FileNotFoundException, IOException {
+    public static void addToZipFile(String fileName, ZipOutputStream zos) throws IOException {
 
         LOG.debug("Writing '" + fileName + "' to zip file");
 
@@ -516,11 +516,11 @@ Anything else that is interesting about inputs, outputs,settings,params
         if ( options.get("properties") !=null)
             properties = (List<String>) options.get("properties");
         if ( options.get("pcoverage") !=null)
-            pcoverage=(double) Double.parseDouble( (String) options.get("pcoverage"));
+            pcoverage= Double.parseDouble( (String) options.get("pcoverage"));
         if ( options.get("tcoverage") !=null)
-            tcoverage=(double) Double.parseDouble( (String) options.get("tcoverage"));
+            tcoverage= Double.parseDouble( (String) options.get("tcoverage"));
         if ( options.get("threshold") !=null)
-            threshold=(int) Integer.parseInt( (String) options.get("threshold"));
+            threshold= Integer.parseInt( (String) options.get("threshold"));
         if ( options.get("proportion") !=null)
             proportion=(String) options.get("proportion");
         if ( options.get("location") !=null)

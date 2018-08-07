@@ -48,16 +48,16 @@ public class DataHelperTest {
   PersistenceLayer pLayer;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
   }
 
   @After
-  public void tearDown() throws Exception {
+  public void tearDown() {
     helpers.DataOps.removeData();
   }
 
 
-  public void shouldTestElementParsing() throws Exception {
+  public void shouldTestElementParsing() {
     final PersistenceLayer p = Configurator.getDefaultConfigurator().getPersistence();
 
    /* final Property property = p.getCache().getProperty("mimetype");
@@ -87,7 +87,7 @@ public class DataHelperTest {
   }
   
 
-  public void shouldTestElementDocumentCreation() throws Exception {
+  public void shouldTestElementDocumentCreation() {
     String collection = "test";
     String uid = "testuid";
     String name = "testname";
@@ -112,7 +112,7 @@ public class DataHelperTest {
   }
   
 
-  public void shouldTestElementDocumentCreationWithConflictedMetadata() throws Exception {
+  public void shouldTestElementDocumentCreationWithConflictedMetadata() {
     String collection = "test";
     String uid = "testuid";
     String name = "testname";
@@ -154,7 +154,7 @@ public class DataHelperTest {
   }
 
 
-  public void shouldTestTypedValueRetrievalForBoolean() throws Exception {
+  public void shouldTestTypedValueRetrievalForBoolean() {
     Element test = new Element("test", "me");
     Object res = DataHelper.getTypedValue(PropertyType.BOOL.name(), "yEs");
 
@@ -183,7 +183,7 @@ public class DataHelperTest {
   }
 
 
-  public void shouldTestTypedValueRetrievalForInteger() throws Exception {
+  public void shouldTestTypedValueRetrievalForInteger() {
     Element test = new Element("test", "me");
     Object res = DataHelper.getTypedValue(PropertyType.INTEGER.name(), "42");
   //  Assert.assertNotNull(res);
@@ -208,7 +208,7 @@ public class DataHelperTest {
   }
   
 
-  public void shouldTestTypedValueRetrievalForFloat() throws Exception {
+  public void shouldTestTypedValueRetrievalForFloat() {
     Element test = new Element("test", "me");
     Object res = DataHelper.getTypedValue(PropertyType.FLOAT.name(), "42");
   //  Assert.assertNotNull(res);
@@ -229,7 +229,7 @@ public class DataHelperTest {
   }
   
 
-  public void shouldTestTypedValueRetrivalForDate() throws Exception {
+  public void shouldTestTypedValueRetrivalForDate() {
     Element test = new Element("test", "me");
     Object res = DataHelper.getTypedValue(PropertyType.DATE.name(), "20121221122121");
   //  Assert.assertNotNull(res);

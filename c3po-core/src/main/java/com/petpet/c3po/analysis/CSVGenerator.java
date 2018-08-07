@@ -285,7 +285,7 @@ public class CSVGenerator {
 
       result = (mr.getStatus().equals("CONFLICT")) ? "CONFLICT" : replace( values.get(0).toString() );
     }*/
-        result = (mr.getStatus().equals("CONFLICT")) ? "CONFLICT" : replace(mr.getValues().get(0).toString());
+        result = (mr.getStatus().equals("CONFLICT")) ? "CONFLICT" : replace(mr.getValues().get(0));
         return result;
     }
 

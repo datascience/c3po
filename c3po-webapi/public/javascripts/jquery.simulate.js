@@ -27,7 +27,7 @@ $.simulate = function(el, type, options) {
 	} else {
 		this.simulateEvent(el, type, options);
 	}
-}
+};
 
 $.extend($.simulate.prototype, {
 	simulateEvent: function(el, type, options) {

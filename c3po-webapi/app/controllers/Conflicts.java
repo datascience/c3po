@@ -284,7 +284,7 @@ public class Conflicts {
         ConflictResolutionProcessor crp=new ConflictResolutionProcessor();
         Filter filter = Filters.getFilterFromSession();
         String url = request().host();
-        Map<String, Integer> overview = crp.getOverview(url, filter);
+        Map<String, Integer> overview = ConflictResolutionProcessor.getOverview(url, filter);
         ObjectNode jsonNodes = Json.newObject();
 
         JsonNode jsonNode = Json.toJson(overview);

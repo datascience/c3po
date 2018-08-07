@@ -1341,7 +1341,7 @@
         for (i=0, l=d.length; i<l; i++) {
             if (! this.breakOnNull) {
                 if (d[i] == null || d[i][0] == null || d[i][1] == null) {
-                    continue;
+
                 }
                 else {
                     temp.push(d[i]);
@@ -10925,7 +10925,7 @@
         }
 
         function thousand_separate(value) {
-            var value_str = new String(value);
+            var value_str = String(value);
             for (var i=10; i>0; i--) {
                 if (value_str == (value_str = value_str.replace(/^(\d+)(\d{3})/, "$1"+$.jqplot.sprintf.thousandsSeparator+"$2"))) break;
             }

@@ -231,9 +231,7 @@ function renderPFC(pfc, div, properties) {
         }
         selectPropertyValue[0].value = sv.propertyvalue;
     }
-};
-
-
+}
 function getSources() {
     startSpinner();
     var result = [];
@@ -250,7 +248,7 @@ function getSources() {
         }
     });
     return result;
-};
+}
 function getPropertyInfo(propertyName) {
     var collection = "";
     $.ajax({
@@ -272,7 +270,7 @@ function getPropertyInfo(propertyName) {
         }
     });
     return result;
-};
+}
 function getPropertyValues(propertyName) {
     startSpinner();
 
@@ -298,7 +296,7 @@ function getPropertyValues(propertyName) {
         }
     });
     return result;
-};
+}
 function getAvailableProperties() {
     var elem = [];
     $.ajax({
@@ -313,9 +311,7 @@ function getAvailableProperties() {
         }
     });
     return elem;
-};
-
-
+}
 //###############################
 //#			  Spinner			#
 //###############################

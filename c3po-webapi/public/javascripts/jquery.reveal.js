@@ -126,7 +126,7 @@
  Open and add Closing Listeners
 ----------------------------*/
         	//Open Modal Immediately
-    	modal.trigger('reveal:open')
+    	modal.trigger('reveal:open');
 			
 			//Close Modal Listeners
 			var closeButton = $('.' + options.dismissmodalclass).bind('click.modalEvent', function () {
@@ -134,7 +134,7 @@
 			});
 			
 			if(options.closeonbackgroundclick) {
-				modalBG.css({"cursor":"pointer"})
+				modalBG.css({"cursor":"pointer"});
 				modalBG.bind('click.modalEvent', function () {
 				  modal.trigger('reveal:close')
 				});
