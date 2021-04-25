@@ -28,7 +28,9 @@
   <build>
     <plugins>    
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.3.0</version>
          <configuration>
           <archive>
             <manifest>
@@ -60,31 +62,25 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+      <version>1.6.1</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.petpet</groupId>
-      <artifactId>c3po-api</artifactId>
-      <version>0.5.0</version>
+      <version>1.6.1</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.petpet</groupId>
       <artifactId>c3po-core</artifactId>
-      <version>0.5.0</version>
+      <version>0.6.0</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-     <groupId>com.ifs</groupId>
-      <artifactId>DirectProfiler</artifactId>
-      <version>0.8</version>
-	<scope>compile</scope>
+      <groupId>com.petpet</groupId>
+      <artifactId>c3po-api</artifactId>
+      <version>0.6.0</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

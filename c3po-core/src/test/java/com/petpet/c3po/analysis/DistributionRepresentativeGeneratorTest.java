@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class DistributionRepresentativeGeneratorTest extends TestCase {
+public class DistributionRepresentativeGeneratorTest  {
 
     Map<String, String> config;
     private static final Logger LOG = LoggerFactory.getLogger(DistributionRepresentativeGeneratorTest.class);
