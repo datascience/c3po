@@ -91,11 +91,6 @@
           </configuration>
         </plugin>
 
-        <plugin>
-          <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
-          <artifactId>sbt-compiler-maven-plugin</artifactId>
-          <version>1.0.0</version>
-        </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
