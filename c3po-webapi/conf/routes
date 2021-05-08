@@ -4,8 +4,8 @@
 
 # Home page
 #TODO remove the first in production...
-GET           /                              controllers.Application.index()
-GET           /c3po                          controllers.Application.index()
+GET           /                              controllers.Application.index
+GET           /c3po                          controllers.Application.index
 GET           /c3po/clear                    controllers.Application.clear()
 GET           /c3po/collections              controllers.Properties.getCollections()
 POST          /c3po/collections              controllers.Properties.setCollection(name: String)

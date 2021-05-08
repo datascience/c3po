@@ -65,14 +65,20 @@
       <plugin>
         <groupId>com.google.code.play2-maven-plugin</groupId>
         <artifactId>play2-maven-plugin</artifactId>
-        <version>1.0.0-rc2</version>
-        <extensions>true</extensions>
+        <version>1.0.0-rc5</version>
         <configuration>
-          <mainModule>main</mainModule>
-          <routesGenerator>injected</routesGenerator>
+          <mainLang>java</mainLang>
         </configuration>
       </plugin>
 
+      <plugin>
+        <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+        <artifactId>sbt-compiler-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <configuration>
+          <javacOptions>-g -parameters -Xlint:unchecked -Xlint:deprecation -Werror</javacOptions>
+        </configuration>
+      </plugin>
 
     </plugins>
 
