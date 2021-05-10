@@ -9,7 +9,6 @@
     </parent>
 
     <artifactId>c3po-webapi</artifactId>
-    <packaging>play2</packaging>
     <name>C3PO Webapi</name>
 
     <properties>
@@ -17,8 +16,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <play2.version>2.8.8</play2.version>
-        <play2.scala.version>2.13</play2.scala.version>
+        <play2.version>2.3.9</play2.version>
+        <play2.scala.version>2.10</play2.scala.version>
         <play2.plugin.version>1.0.0-rc5</play2.plugin.version>
 
 
@@ -30,6 +29,10 @@
     </properties>
 
     <repositories>
+        <repository>
+            <id>typesafe-releases-plugins</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -48,8 +51,68 @@
             <groupId>com.typesafe.play</groupId>
             <artifactId>play_${play2.scala.version}</artifactId>
             <version>${play2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.scalaz.stream</groupId>
+                    <artifactId>scalaz-stream_2.11</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.typesafe.netty</groupId>
+                    <artifactId>netty-http-pipelining</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.typesafe.netty</groupId>
+            <artifactId>netty-http-pipelining</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-enhancer</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>filters-helpers_${play2.scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-ws_${play2.scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-cache_${play2.scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-java_${play2.scala.version}</artifactId>
+            <version>${play2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.scalaz.stream</groupId>
+            <artifactId>scalaz-stream_2.11</artifactId>
+            <version>0.7.2a</version>
+        </dependency>
 
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -61,16 +124,10 @@
         <dependency>
             <groupId>com.typesafe.play</groupId>
             <artifactId>play-netty-server_${play2.scala.version}</artifactId>
-            <version>${play2.version}</version>
+            <version>2.4.0</version>
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.typesafe.play</groupId>
-            <artifactId>play-specs2_${play2.scala.version}</artifactId>
-            <version>${play2.version}</version>
-            <scope>test</scope>
-        </dependency>
 
 
 
@@ -78,6 +135,12 @@
             <groupId>com.petpet</groupId>
             <artifactId>c3po-core</artifactId>
             <version>0.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.simpleframework</groupId>
+            <artifactId>simple-xml</artifactId>
+            <version>2.7.1</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -97,8 +160,11 @@
             <version>0.10</version>
             <scope>test</scope>
         </dependency>
-
-
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play_2.11</artifactId>
+            <version>2.5.19</version>
+        </dependency>
 
 
     </dependencies>
@@ -138,6 +204,29 @@
         </resources>
 
         <plugins>
+
+
+
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>1.0.0-rc5</version>
+                <configuration>
+                    <mainLang>java</mainLang>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>1.0.0</version>
+
+                <configuration>
+                    <javacOptions>-g -parameters -Xlint:unchecked -Xlint:deprecation -Werror</javacOptions>
+                </configuration>
+            </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
